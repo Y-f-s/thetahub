@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World History Archives - Theta Digital Hub</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #12100E; /* Dark Ebony */
+            color: #D6C7B0; /* Parchment Text */
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+
+        /* Tema Warna History */
+        .text-sepia { color: #A67C52; }
+        .bg-sepia { background-color: #A67C52; }
+        .border-sepia { border-color: #4A3728; }
+        
+        /* Background Pattern (Old Paper / Canvas Texture) */
+        .bg-history-pattern {
+            background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+            background-color: #12100E;
+        }
+
+        /* Format Badges */
+        .badge-epoch { background-color: rgba(166, 124, 82, 0.15); color: #D6C7B0; border: 1px solid rgba(166, 124, 82, 0.4); }
+        .badge-pestel { background-color: rgba(214, 199, 176, 0.1); color: #F5F5F5; border: 1px solid rgba(214, 199, 176, 0.2); }
+
+        /* Desain Kartu Museum */
+        .history-card {
+            background: #1A1714;
+            border: 1px solid #2D2721;
+            border-radius: 4px; /* Sudut tegas untuk kesan klasik */
+            transition: all 0.5s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+        }
+        
+        .history-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, #A67C52, transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 20;
+        }
+
+        .history-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            border-color: #A67C52;
+        }
+        
+        .history-card:hover::before { opacity: 1; }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-bottom: 1px solid #2D2721;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 2s ease;
+            filter: sepia(50%) contrast(1.1) brightness(0.8);
+        }
+
+        .history-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+            filter: sepia(10%) contrast(1.2) brightness(1);
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 100%;
+            background: linear-gradient(to top, #1A1714 5%, transparent 80%);
+        }
+
+        .format-tags {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            font-size: 0.55rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #12100E; }
+        ::-webkit-scrollbar-thumb { background: #A67C52; }
+    </style>
+</head>
+<body class="bg-history-pattern">
+
+    <header class="pt-24 pb-16 px-6 text-center relative z-10">
+        <div class="absolute top-6 left-6 z-20">
+            <a href="#">
+                <img src="Theta Hub.png" alt="Theta Hub Logo" class="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition filter sepia">
+            </a>
+        </div>
+
+        <div class="max-w-4xl mx-auto mt-8 md:mt-0">
+            <span class="inline-block py-1.5 px-5 border border-sepia text-sepia text-[10px] tracking-[0.4em] uppercase mb-6 font-bold bg-[#1A1714]">
+                Archived Knowledge & Legacies
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold text-[#E2D1B6] mb-6 italic tracking-tight leading-tight">
+                Chronicles <span class="text-sepia">&</span> Civilizations
+            </h1>
+            <p class="text-base md:text-lg text-[#8E7F6E] mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+                Menelusuri jejak peradaban dari era Sebelum Masehi (SM) hingga revolusi modern. Analisis mendalam sejarah dunia melalui lensa PESTEL: Politik, Ekonomi, Sosial, Teknologi, Lingkungan, dan Hukum.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">3500 SM - 500 SM</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600525207436-168a25c6439c?q=80&w=800&auto=format&fit=crop" alt="Ancient Pyramids">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">The Dawn of Empires</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Sejarah Mesopotamia, Mesir Kuno, dan Lembah Indus. Menelaah sistem irigasi pertama, tulisan paku, hingga hukum Hammurabi.</p>
+                    <button onclick="openModal()" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto tracking-widest text-[10px] uppercase">
+                        Buka Arsip Kuno 🏛️
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Politic & Philosophy</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1552288092-7eb5d458c4ca?q=80&w=800&auto=format&fit=crop" alt="Roman Statue">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Classical Antiquity</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Era Yunani dan Romawi Kuno. Akar demokrasi, sistem republik, dan lahirnya filsafat rasional yang membentuk tatanan politik Barat.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Akses Era Klasik 🏛️</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Economic History</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=800&auto=format&fit=crop" alt="Gold Coins">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Wealth & Currencies</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Evolusi uang: Dari sistem barter, kejayaan koin emas dan perak sebagai penyimpan nilai murni (hard asset), hingga lahirnya perbankan modern.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Pelajari Sejarah Ekonomi 💰</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">All Eras</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=800&auto=format&fit=crop" alt="Chess / Tactics">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">The Art of War</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Evolusi strategi militer: Taktik Sun Tzu, formasi Legiun Romawi, penaklukan Mongol, hingga sejarah Perang Dunia I & II.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Buka Arsip Militer ⚔️</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Technological</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1532153955177-f59af40d6472?q=80&w=800&auto=format&fit=crop" alt="Gears and Blueprints">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Evolution of Tech</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Jejak inovasi manusia: Penemuan roda, revolusi cetak Gutenberg, hingga rekayasa mesin uap yang mendisrupsi cara hidup secara massal.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Arsip Teknologi ⚙️</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">Abad 14 - 17 M</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1544965850-6f8a677cb210?q=80&w=800&auto=format&fit=crop" alt="Renaissance Art">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">The Renaissance</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Kebangkitan seni dan sains di Eropa. Analisis mahakarya Da Vinci, Michelangelo, dan pengaruh pergeseran budaya (Sosial-Budaya) pada masyarakat.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Jelajahi Renaisans 🎨</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Environment / Geo</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop" alt="Old Map Compass">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Age of Discovery</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Pemetaan ulang dunia oleh penjelajah laut. Menelusuri jalur rempah Nusantara, navigasi samudra, dan kolonialisme yang merombak peta geografis bumi.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Buka Peta Kuno 🧭</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">Abad 8 - 14 M</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=800&auto=format&fit=crop" alt="Islamic Architecture">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Islamic Golden Age</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Masa kejayaan sains, kedokteran, dan astronomi di Timur Tengah. Kontribusi Al-Khawarizmi (Aljabar) dan Ibnu Sina dalam peradaban global.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Pelajari Kejayaan 🌙</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Legal & Political</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=800&auto=format&fit=crop" alt="United Nations / Treaty">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Modern Geopolitics</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Sejarah hukum internasional: Perjanjian Westphalia, era Perang Dingin, pembentukan PBB, hingga tatanan dunia baru (New World Order).</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Kajian Geopolitik 🌍</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pestel">Socio-Cultural</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800&auto=format&fit=crop" alt="Ancient Texts">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Religions & Myths</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Perkembangan sistem kepercayaan spiritual dunia. Dari Mitologi Nordik/Yunani kuno hingga penyebaran agama-agama Abrahamik.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Arsip Mitologi ✨</a>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">World Figures</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1580130281216-1e3c1c21db39?q=80&w=800&auto=format&fit=crop" alt="Statue Figure">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">Hall of Legacies</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Ensiklopedia tokoh berpengaruh yang memutar haluan sejarah dunia. Analisis psikologis dan keputusan krusial para pemimpin besar.</p>
+                    <button onclick="openModal()" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto tracking-widest text-[10px] uppercase">
+                        Buka Galeri Tokoh 🏛️
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-epoch">Abad 20 - 21 M</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="Circuit Board">
+                    <div class="card-img-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-3 text-[#E2D1B6] serif-font">The Information Age</h3>
+                    <p class="text-sm text-[#8E7F6E] mb-6 flex-grow leading-relaxed">Transisi peradaban dari era industri ke era digital. Sejarah awal internet, silikon, dan komputasi yang menjadi pondasi dunia masa kini.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-sepia text-sepia py-3 hover:bg-sepia hover:text-[#12100E] transition font-bold mt-auto text-center tracking-widest text-[10px] uppercase">Masuk Era Digital 🌐</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="figureModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-[#1A1714] border border-sepia w-full max-w-2xl shadow-[0_0_50px_rgba(166,124,82,0.2)] relative z-10 overflow-hidden transform transition-all">
+            
+            <div class="p-8 border-b border-sepia/30 text-center">
+                <h3 class="text-3xl font-bold text-[#E2D1B6] italic serif-font">Hall of Legacies</h3>
+                <p class="text-[10px] text-sepia mt-2 uppercase tracking-[0.3em]">Pilih Kategori Tokoh Dunia</p>
+            </div>
+            
+            <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[60vh] overflow-y-auto">
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-5 bg-[#12100E] border border-sepia/20 hover:border-sepia transition group">
+                    <div class="text-3xl mr-4 opacity-70 group-hover:opacity-100 transition filter sepia">⚖️</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#E2D1B6] text-sm uppercase tracking-wider">Filsuf & Pemikir</h5>
+                        <p class="text-[10px] text-[#8E7F6E]">Socrates, Plato, Marx, dsb.</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-5 bg-[#12100E] border border-sepia/20 hover:border-sepia transition group">
+                    <div class="text-3xl mr-4 opacity-70 group-hover:opacity-100 transition filter sepia">🔭</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#E2D1B6] text-sm uppercase tracking-wider">Ilmuwan Penemu</h5>
+                        <p class="text-[10px] text-[#8E7F6E]">Da Vinci, Tesla, Einstein.</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-5 bg-[#12100E] border border-sepia/20 hover:border-sepia transition group">
+                    <div class="text-3xl mr-4 opacity-70 group-hover:opacity-100 transition filter sepia">🛡️</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#E2D1B6] text-sm uppercase tracking-wider">Sang Penakluk</h5>
+                        <p class="text-[10px] text-[#8E7F6E]">Alexander, Napoleon, Caesar.</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-5 bg-[#12100E] border border-sepia/20 hover:border-sepia transition group">
+                    <div class="text-3xl mr-4 opacity-70 group-hover:opacity-100 transition filter sepia">🎨</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#E2D1B6] text-sm uppercase tracking-wider">Seniman Klasik</h5>
+                        <p class="text-[10px] text-[#8E7F6E]">Shakespeare, Van Gogh.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="p-6 bg-[#12100E] text-center border-t border-sepia/20">
+                <button onclick="closeModal()" class="text-sepia font-bold hover:text-[#E2D1B6] transition text-[10px] uppercase tracking-[0.3em]">Tutup Galeri</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center border-t border-sepia/10 mt-10">
+        <div class="text-2xl font-extrabold tracking-widest text-[#E2D1B6]/30 mb-4 serif-font">THETA<span class="text-sepia/50"> HUB</span></div>
+        <p class="text-[9px] text-[#8E7F6E] font-bold tracking-[0.5em] uppercase opacity-70">
+            &copy; 2026 THETA DIGITAL HUB. ARCHIVES DIVISION.
+        </p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('figureModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('figureModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

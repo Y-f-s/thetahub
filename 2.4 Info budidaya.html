@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budidaya & Agrotech Hub - Yansyah Technology</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #F7F9F2; /* Soft Green-White */
+            color: #1A3636; /* Deep Forest Green */
+        }
+        
+        /* Tema Warna Budidaya */
+        .text-leaf { color: #4F6F52; }
+        .bg-leaf { background-color: #4F6F52; }
+        
+        /* Background Pattern (Subtle Leaves/Nature) */
+        .bg-nature-pattern {
+            background-image: radial-gradient(#4f6f521a 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+
+        /* Format Badges */
+        .badge-panduan { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
+        .badge-video { background-color: #FFFDE7; color: #FBC02D; border: 1px solid #FFF9C4; }
+        .badge-iot { background-color: #E3F2FD; color: #1976D2; border: 1px solid #BBDEFB; }
+        .badge-aqua { background-color: #E0F7FA; color: #006064; border: 1px solid #B2EBF2; }
+        .badge-earth { background-color: #EFEBE9; color: #4E342E; border: 1px solid #D7CCC8; }
+        .badge-biz { background-color: #FCE4EC; color: #880E4F; border: 1px solid #F8BBD0; }
+        .badge-livestock { background-color: #FFF3E0; color: #E65100; border: 1px solid #FFE0B2; }
+
+        /* Desain Kartu Budidaya */
+        .farm-card {
+            background: #FFFFFF;
+            border: 1px solid #E0E7E1;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(79, 111, 82, 0.05);
+            height: 100%;
+        }
+        
+        .farm-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(79, 111, 82, 0.12);
+            border-color: #4F6F52;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .farm-card:hover .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .format-tags {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #4F6F52; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-nature-pattern">
+
+    <header class="pt-24 pb-16 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-[#E8F5E9] text-[#2E7D32] font-bold text-xs tracking-widest uppercase mb-6 border border-[#C8E6C9]">
+                🌱 Green Economy & Agriculture
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#1A3636] mb-6 tracking-tight leading-tight">
+                Pusat Edukasi <span class="text-leaf">Budidaya Modern</span>
+            </h1>
+            <p class="text-lg text-[#4F6F52] opacity-90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Temukan panduan lengkap budidaya perikanan, pertanian hidroponik, peternakan, hingga pemanfaatan teknologi IoT untuk hasil panen maksimal.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-aqua shadow-sm">Aquaculture</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1524704659690-3f60375a327c?q=80&w=800&auto=format&fit=crop" alt="Fish Farming">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Masterclass Budidaya Ikan</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Panduan lengkap ternak ikan air tawar (Lele, Nila, Gurame) dari pembibitan, persiapan kolam, hingga manajemen pakan.</p>
+                    <button onclick="openModal()" class="w-full bg-[#4F6F52] text-white py-4 rounded-xl font-bold mt-auto hover:bg-[#1A3636] transition shadow-lg flex items-center justify-center gap-2">
+                        Pilih Komoditas 🐟
+                    </button>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-panduan shadow-sm">Hydroponic</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=800&auto=format&fit=crop" alt="Hydroponics">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Hidroponik Rumah Tangga</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Cara mudah menanam sayur di lahan sempit dengan sistem NFT/Wick. Panen sehat dari halaman sendiri tanpa pestisida.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Akses Materi 🥗</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-iot shadow-sm">Blueprint IoT</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=800&auto=format&fit=crop" alt="Smart Farming">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Smart Farming ESP32</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Otomasi penyiraman dan pemantauan nutrisi tanaman via smartphone. Blueprint lengkap coding dan perakitan alat untuk petani modern.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Pelajari Teknologi ⚙️</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-aqua shadow-sm">Premium Guide</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=800&auto=format&fit=crop" alt="Shrimp Farming">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Budidaya Udang Vaname</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">SOP budidaya udang vaname intensif dan skala rumah tangga (Bioflok). Pengaturan kualitas air, salinitas, dan pencegahan penyakit.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Akses SOP 🦐</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-video shadow-sm">Hobby & Biz</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b600f3?q=80&w=800&auto=format&fit=crop" alt="Aquascape">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Aquascape & Ikan Hias</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Hobi bernilai tinggi. Teknik merakit aquascape pemula, pemilihan flora/fauna, dan rahasia ternak ikan hias premium (Channa, Koi, Guppy).</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Pelajari Teknik 🌿</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-earth shadow-sm">Eco-Friendly</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1592982537447-6f2334ed58f6?q=80&w=800&auto=format&fit=crop" alt="Organic Compost">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Pembuatan Pupuk Organik</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Formulasi POC (Pupuk Organik Cair) dan kompos padat dari limbah rumah tangga. Hemat biaya pupuk dan sehatkan struktur tanah.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Lihat Formula 🍂</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-earth shadow-sm">Micro Business</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1605553950444-23963d76eeb1?q=80&w=800&auto=format&fit=crop" alt="Mushroom Farming">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Budidaya Jamur Tiram</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Peluang bisnis di lahan sempit dan minim cahaya. Cara membuat baglog, inkubasi, pemeliharaan kumbung, hingga teknik panen harian.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Buka Panduan 🍄</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-livestock shadow-sm">Livestock</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?q=80&w=800&auto=format&fit=crop" alt="Poultry Farming">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Ternak Ayam KUB</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Manajemen peternakan Ayam Kampung Unggul Balitbangtan (KUB). Rahasia pakan murah, vaksinasi, dan perancangan kandang ideal.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Akses Modul 🐓</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-livestock shadow-sm">High Yield</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1587049352847-4d4b1ed748d5?q=80&w=800&auto=format&fit=crop" alt="Beekeeping">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Ternak Lebah Trigona</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Cara aman budidaya lebah tanpa sengat (Klanceng/Trigona). Pemecahan koloni, pembuatan stup, dan pemilihan vegetasi pakan terbaik.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Pelajari Lebah 🍯</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-iot shadow-sm">Tech Design</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=800&auto=format&fit=crop" alt="Drip Irrigation">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Sistem Irigasi Tetes</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Blueprint instalasi Drip Irrigation untuk efisiensi air dan pupuk (Fertigasi) pada tanaman buah dalam pot (Tabulampot) atau ladang luas.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Lihat Blueprint 💧</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-panduan shadow-sm">Architecture</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1585237894234-fc56c802613c?q=80&w=800&auto=format&fit=crop" alt="Greenhouse">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Greenhouse Build Guide</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Panduan material dan konstruksi Greenhouse murah berbahan bambu/baja ringan. Lindungi tanaman dari hama dan cuaca ekstrem.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Desain Bangunan 🏗️</a>
+                </div>
+            </div>
+
+            <div class="farm-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-biz shadow-sm">Business Strategy</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop" alt="Agribusiness Market">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#1A3636]">Agribisnis & Marketing</h3>
+                    <p class="text-sm text-[#4F6F52] mb-8 flex-grow leading-relaxed">Strategi mengemas produk, mencari rantai pasok (supply chain), dan menjual hasil panen ke supermarket atau pasar ekspor langsung.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-[#4F6F52] text-[#4F6F52] py-4 rounded-xl hover:bg-[#4F6F52] hover:text-white transition font-bold mt-auto text-center">Strategi Pemasaran 📈</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="fishModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-[#1A3636]/80 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-white rounded-[32px] w-full max-w-lg shadow-2xl relative z-10 overflow-hidden transform transition-all border border-[#E0E7E1]">
+            
+            <div class="p-8 text-center bg-[#F7F9F2] border-b border-[#E0E7E1]">
+                <h3 class="text-2xl font-bold text-[#1A3636]">Pilih Komoditas Budidaya</h3>
+                <p class="text-sm text-[#4F6F52] mt-2">Pilih panduan spesifik sesuai minat Anda.</p>
+            </div>
+            
+            <div class="p-6 grid grid-cols-1 gap-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white border border-[#E0E7E1] rounded-2xl hover:border-[#4F6F52] hover:bg-[#E8F5E9] transition group shadow-sm">
+                    <div class="w-14 h-14 rounded-xl bg-[#F7F9F2] flex items-center justify-center text-3xl mr-4 border border-[#E0E7E1] group-hover:border-[#4F6F52]">🐟</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#1A3636]">Budidaya Ikan Lele Bioflok</h5>
+                        <p class="text-xs text-[#4F6F52] mt-1">Hemat lahan, air, hasil melimpah.</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white border border-[#E0E7E1] rounded-2xl hover:border-[#4F6F52] hover:bg-[#E8F5E9] transition group shadow-sm">
+                    <div class="w-14 h-14 rounded-xl bg-[#F7F9F2] flex items-center justify-center text-3xl mr-4 border border-[#E0E7E1] group-hover:border-[#4F6F52]">🦞</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#1A3636]">Udang Vaname Rumah Tangga</h5>
+                        <p class="text-xs text-[#4F6F52] mt-1">Panduan teknis komoditas ekspor.</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white border border-[#E0E7E1] rounded-2xl hover:border-[#4F6F52] hover:bg-[#E8F5E9] transition group shadow-sm">
+                    <div class="w-14 h-14 rounded-xl bg-[#F7F9F2] flex items-center justify-center text-3xl mr-4 border border-[#E0E7E1] group-hover:border-[#4F6F52]">🍄</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#1A3636]">Budidaya Jamur Tiram</h5>
+                        <p class="text-xs text-[#4F6F52] mt-1">Bisnis sampingan modal minim.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="p-6 bg-[#F7F9F2] text-center border-t border-[#E0E7E1]">
+                <button onclick="closeModal()" class="text-[#4F6F52] font-bold text-sm tracking-widest uppercase hover:text-[#1A3636] transition">Tutup Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center border-t border-[#E0E7E1] mt-10">
+        <p class="text-xs text-[#4F6F52] font-bold tracking-[0.2em] uppercase opacity-60">
+            &copy; 2026 YANSYAH TECHNOLOGY. AGRO & AQUACULTURE.
+        </p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('fishModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('fishModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

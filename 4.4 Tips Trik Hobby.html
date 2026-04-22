@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faceless Video Bundles - Yansyah Technology</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #F8FAF8; /* Ultra Light Tint */
+            color: #2D3A2D; /* Deep Forest Green / Slate */
+            overflow-x: hidden;
+        }
+        
+        /* Tema Warna Terang */
+        .text-sage { color: #789461; }
+        .bg-sage { background-color: #789461; }
+        .bg-soft-gradient { background: linear-gradient(135deg, #789461 0%, #A9B388 100%); }
+
+        /* Card Design: Zen Style */
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E9EFE9;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .zen-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(120, 148, 97, 0.12);
+            border-color: #789461;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .zen-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        /* Responsive Tags */
+        .tag {
+            padding: 5px 14px;
+            border-radius: 99px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .badge-sage { background: rgba(255, 255, 255, 0.9); color: #789461; border: 1px solid #E9EFE9; }
+        .badge-amber { background: rgba(255, 255, 255, 0.9); color: #D97706; border: 1px solid #FEF3C7; }
+        .badge-blue { background: rgba(255, 255, 255, 0.9); color: #0284C7; border: 1px solid #E0F2FE; }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #789461; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="pt-20 pb-12 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-green-50 text-sage font-bold text-[10px] tracking-[0.2em] uppercase mb-6 border border-green-100">
+                🎥 Viral Content Assets
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 mb-6 tracking-tight leading-tight">
+                Faceless Video <span class="text-sage">Bundles</span>
+            </h1>
+            <p class="text-sm md:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Akses puluhan aset video estetik tanpa wajah (HD/4K) untuk kebutuhan konten Reels, Shorts, dan TikTok. Solusi instan membangun audiens dan monetisasi.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-amber">Top Niche</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1563612116625-3012372fcec4?q=80&w=800&auto=format&fit=crop" alt="Luxury Cars">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Luxury Lifestyle</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video kemewahan (Supercar, Mansion, Jam Tangan). Sangat cocok untuk konten motivasi finansial & trading.</p>
+                    <button onclick="openModal()" class="w-full bg-soft-gradient text-white py-4 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition active:scale-95">
+                        Akses Bundle 📥
+                    </button>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-sage">Mindset</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" alt="Motivation">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Stoic & Motivation</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video background estetik (hujan, patung, alam) siap ditimpa dengan quotes motivasi harian.</p>
+                    <button onclick="openModal()" class="w-full bg-soft-gradient text-white py-4 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition active:scale-95">
+                        Akses Bundle 📥
+                    </button>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-blue">Health</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Gym Workout">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Gym Motivation</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan klip video angkat beban dan fitness. Niche stabil untuk promosi produk diet atau suplemen kesehatan.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-amber">Crafts</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Woodworking">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Woodworking & DIY</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">50+ Video kerajinan kayu dan restorasi barang yang sangat memuaskan (satisfying) untuk ditonton audiens.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-sage">Food</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-149883716733f-a5189f104466?q=80&w=800&auto=format&fit=crop" alt="Healthy Food">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Healthy Diet Preps</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video estetika memasak makanan sehat dan smoothies. Ideal untuk akun panduan hidup sehat.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-blue">Viral</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?q=80&w=800&auto=format&fit=crop" alt="Satisfying Texture">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Satisfying ASMR</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan klip kinetic sand dan pemotongan sabun (soap cutting) dengan retention rate paling tinggi.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-sage">Zen Mode</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Yoga Meditation">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Yoga Escapes</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">50+ Video gerakan yoga estetik dan relaksasi. Sempurna jika digabungkan dengan musik lo-fi atau healing.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-amber">Aesthetic</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Coffee Pour">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Cafe Vibes</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan klip POV Barista, latte art, dan suasana cafe. Sangat digemari pecinta konten chill & study.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-blue">Wanderlust</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop" alt="Drone Travel">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Cinematic Nature</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video drone 4K lanskap alam, pegunungan, dan pantai. Konten visual memukau yang memanjakan mata.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-sage">Tech</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop" alt="Desk Setup">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Desk Setup Productivity</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">50+ Klip estetika ruang kerja dan mechanical keyboard. Sangat potensial untuk affiliate gadget.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-amber">Finance</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop" alt="Trading Charts">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Trading & Crypto</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video pergerakan candlestick dan monitor multi-screen. Pas untuk konten edukasi keuangan.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-blue">Cityscape</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=800&auto=format&fit=crop" alt="Cyberpunk City">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Urban Night POV</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">50+ Video POV jalanan kota malam hari dengan lampu neon. Sempurna untuk disandingkan dengan audio lofi.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-sage">Nature</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1416879598555-5264b3df6248?q=80&w=800&auto=format&fit=crop" alt="Planting">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Houseplants Care</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan klip menyiram tanaman hias dan merawat Monstera. Niche hobi yang sangat diminati pencinta alam.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-amber">Humor</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800&auto=format&fit=crop" alt="Cute Cat">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Pets & Animals</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan kompilasi video hewan lucu. Niche dengan jangkauan audiens luas dan mudah mendapatkan share organik.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+            <div class="zen-card">
+                <div class="card-img-wrapper">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span class="tag badge-blue">Lifestyle</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=800&auto=format&fit=crop" alt="Men's Suit">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-xl mb-3 text-slate-800">Men's Grooming</h3>
+                    <p class="text-xs md:text-sm text-slate-500 mb-8 flex-grow leading-relaxed">Puluhan video gaya pakaian (OOTD) pria tanpa wajah dan rutinitas maskulin untuk konten gaya hidup.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-sage text-sage py-4 rounded-xl font-bold text-sm hover:bg-sage hover:text-white transition">Akses Bundle 📥</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="bundleModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-white rounded-[32px] w-full max-w-md relative z-10 overflow-hidden shadow-2xl transform transition-all">
+            <div class="p-8 text-center bg-green-50/50 border-b border-green-100">
+                <h3 class="text-xl font-bold text-slate-800">Format Bundle</h3>
+                <p class="text-xs text-sage mt-2">Apa saja isi dalam paket ini?</p>
+            </div>
+            <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                <div class="flex items-center p-4 bg-white border border-slate-100 rounded-2xl">
+                    <div class="text-2xl mr-4">📁</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-slate-800">Akses Google Drive</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wide">Akses Selamanya & Mudah Diunduh</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-white border border-slate-100 rounded-2xl">
+                    <div class="text-2xl mr-4">📱</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-slate-800">Format Vertical (9:16)</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wide">Cocok untuk TikTok, Reels, Shorts</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-white border border-slate-100 rounded-2xl">
+                    <div class="text-2xl mr-4">✨</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-slate-800">Bebas Watermark</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wide">Siap edit & pakai untuk konten Anda</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 text-center border-t border-slate-50 bg-slate-50/50">
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="block w-full py-3 mb-3 rounded-xl bg-sage text-white font-bold text-sm shadow-md hover:bg-[#647c51] transition">Ke Halaman Download</a>
+                <button onclick="closeModal()" class="text-xs font-bold text-slate-400 hover:text-sage transition uppercase tracking-[0.2em]">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 mt-8 text-center border-t border-slate-100">
+        <p class="text-[10px] text-slate-400 font-bold tracking-[0.4em] uppercase">
+            &copy; 2026 YANSYAH TECHNOLOGY. CONTENT HUB.
+        </p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('bundleModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal() {
+            document.getElementById('bundleModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

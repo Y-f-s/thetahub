@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle & Productivity Hub - Theta Hub</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #FDFBF7; /* Warm Vanilla */
+            color: #2A241D; /* Deep Espresso */
+            overflow-x: hidden;
+        }
+        
+        /* Tema Warna Aesthetic */
+        .text-caramel { color: #D4A373; }
+        .bg-caramel { background-color: #D4A373; }
+        .text-terracotta { color: #D97757; }
+        .bg-terracotta { background-color: #D97757; }
+        
+        /* Background Pattern (Subtle Grain) */
+        .bg-aesthetic-pattern {
+            background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+            background-blend-mode: multiply;
+        }
+
+        /* Desain Kartu Premium (Soft UI) */
+        .lifestyle-card {
+            background: #FFFFFF;
+            border: 1px solid #F0EBE1;
+            border-radius: 32px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(42, 36, 29, 0.03);
+            position: relative;
+            height: 100%;
+        }
+        
+        .lifestyle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(217, 119, 87, 0.1);
+            border-color: #D4A373;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            padding: 12px 12px 0 12px;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            transition: transform 1.2s ease;
+        }
+
+        .lifestyle-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        /* Badges */
+        .format-tags {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .badge-coffee { background: rgba(255, 255, 255, 0.9); color: #8D6E63; }
+        .badge-tech { background: #E0F2FE; color: #0369A1; }
+        .badge-mind { background: #FEF3C7; color: #D97706; }
+        .badge-wealth { background: #DCFCE7; color: #15803D; }
+        .badge-growth { background: #F3E8FF; color: #7E22CE; }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #D4A373; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-aesthetic-pattern">
+
+    <header class="pt-24 pb-16 px-6 text-center relative z-10">
+        <div class="absolute top-6 left-6 z-20">
+            <a href="#">
+                <img src="Theta Hub.png" alt="Theta Hub Logo" class="h-10 md:h-12 w-auto drop-shadow-md">
+            </a>
+        </div>
+
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-[#D4A373] opacity-10 blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-3xl mx-auto mt-12 md:mt-0 relative z-10">
+            <span class="inline-block py-2 px-5 rounded-full bg-[#F5EFE6] text-[#8D6E63] font-bold text-[10px] tracking-widest uppercase mb-6 border border-[#E8DFD5]">
+                ☕ Coffee, Focus & Growth
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#2A241D] mb-6 tracking-tight leading-tight">
+                Lifestyle <span class="text-terracotta">&</span> Productivity
+            </h1>
+            <p class="text-lg text-[#6F4E37] opacity-90 mb-8 max-w-xl mx-auto leading-relaxed">
+                Ruang rehat untuk menata hobi, ruang kerja, dan fokus membangun bisnis yang nyata di era digital.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-coffee">Lifestyle</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Coffee Selection">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Curated Coffee List</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Koleksi referensi biji kopi nusantara pilihan. Temukan profil rasa terbaik untuk menemani sesi kerja yang panjang dan tingkatkan fokus.</p>
+                    <button onclick="openModal()" class="w-full bg-[#2A241D] text-white py-4 rounded-2xl font-bold hover:bg-terracotta transition shadow-lg mt-auto flex items-center justify-center gap-2">
+                        Pilih Kopi Favorit ☕
+                    </button>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-tech">Workspace</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop" alt="Minimalist Setup">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Minimalist Desk Setup</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Panduan merakit setup ruang kerja estetik dan ergonomis. Tingkatkan mood dan hindari sakit punggung saat WFH.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Lihat Gear Setup 💻</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-tech">Digital Template</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1507925922837-326f12d93656?q=80&w=800&auto=format&fit=crop" alt="Notion Template">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Notion "Life OS"</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Template Notion all-in-one yang sedang viral. Atur jadwal harian, target bulanan, hingga habit tracker di satu tempat estetik.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Unduh Template 📓</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-mind">Mental Health</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" alt="Mindfulness">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Dopamine Detox Guide</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Cara mereset otak dari kecanduan scroll sosmed. Kembalikan rentang fokus panjang Anda untuk melakukan *deep work* yang nyata.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Mulai Detox 🧘‍♂️</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-wealth">Wealth Building</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop" alt="Finance Tracking">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Personal Finance Tracker</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Dashboard Excel/Sheets untuk membagi gaji dengan rule 50/30/20. Lacak pengeluaran dan pantau pertumbuhan aset dengan rapi.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Atur Keuangan 💰</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-growth">Self-Improvement</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?q=80&w=800&auto=format&fit=crop" alt="Books">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">1% Better: Book Summaries</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Ringkasan padat dari buku-buku pengembangan diri terbaik dunia (Atomic Habits, Deep Work). Baca inti sarinya dalam 15 menit.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Baca Ringkasan 📚</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-tech">Outdoor Fun</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=800&auto=format&fit=crop" alt="Drone Flying">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Aerial Exploration</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Jadikan akhir pekan lebih seru. Eksplorasi dunia dari udara, pelajari manuver terbang, dan cara menangkap foto landscape yang estetik.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Panduan Drone 🚁</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-wealth">Wellness</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop" alt="Healthy Meal">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Busy People Meal Prep</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Trik menyiapkan makanan sehat untuk seminggu dalam 1 jam, plus rutinitas *micro-workout* 10 menit di sela-sela waktu kerja.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Mulai Hidup Sehat 🥗</a>
+                </div>
+            </div>
+
+            <div class="lifestyle-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-growth">Side Hustle</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop" alt="Digital Product">
+                </div>
+                <div class="p-8 flex flex-col flex-grow text-center">
+                    <h3 class="font-bold text-2xl mb-3 text-[#2A241D]">Side Hustle Blueprint</h3>
+                    <p class="text-sm text-[#6F4E37] mb-8 flex-grow leading-relaxed">Cara memonetisasi skill Anda menjadi produk digital otomatis (E-book, Template, Video). Bangun *passive income* mulai hari ini.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border border-[#D97757] text-[#D97757] py-4 rounded-2xl hover:bg-[#D97757] hover:text-white transition font-bold mt-auto">Mulai Berkarya 🚀</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="coffeeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-[#2A241D]/60 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-white rounded-[32px] w-full max-w-lg shadow-2xl relative z-10 overflow-hidden transform transition-all border border-[#F0EBE1]">
+            
+            <div class="p-8 text-center bg-[#FDFBF7] border-b border-[#F0EBE1]">
+                <h3 class="text-2xl font-bold text-[#2A241D]">Pilih Varian Kopi</h3>
+                <p class="text-sm text-[#6F4E37] mt-2">Mana mood-mu hari ini sebelum beraktivitas?</p>
+            </div>
+            
+            <div class="p-6 grid grid-cols-1 gap-4 max-h-[60vh] overflow-y-auto custom-scrollbar bg-white">
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-[#FDFBF7] border border-[#F0EBE1] rounded-2xl hover:border-terracotta hover:bg-[#FFF9F5] transition group">
+                    <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-3xl mr-4 border border-[#F0EBE1]">🏔️</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#2A241D]">Arabica Gayo Clean</h5>
+                        <p class="text-xs text-[#6F4E37] mt-1">Acidic, Fruity, & Elegant</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-[#FDFBF7] border border-[#F0EBE1] rounded-2xl hover:border-terracotta hover:bg-[#FFF9F5] transition group">
+                    <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-3xl mr-4 border border-[#F0EBE1]">🍯</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#2A241D]">Java Honey Process</h5>
+                        <p class="text-xs text-[#6F4E37] mt-1">Sweet, Balanced, & Nutty</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-[#FDFBF7] border border-[#F0EBE1] rounded-2xl hover:border-terracotta hover:bg-[#FFF9F5] transition group">
+                    <div class="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center text-3xl mr-4 border border-[#F0EBE1]">☕</div>
+                    <div class="text-left">
+                        <h5 class="font-bold text-[#2A241D]">Espresso Blend Strong</h5>
+                        <p class="text-xs text-[#6F4E37] mt-1">Bold, Dark, & Powerful</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="p-6 bg-[#FDFBF7] text-center border-t border-[#F0EBE1]">
+                <button onclick="closeModal()" class="text-[#6F4E37] font-bold text-sm tracking-widest uppercase hover:text-terracotta transition">Tutup Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center mt-8">
+        <p class="text-xs text-[#6F4E37] font-bold tracking-[0.3em] uppercase opacity-60">
+            &copy; 2026 THETA HUB. LIFESTYLE & PRODUCTIVITY.
+        </p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('coffeeModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('coffeeModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

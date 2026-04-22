@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Vault - Theta Hub</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505; /* Pure Black */
+            color: #F8FAFC; 
+            overflow-x: hidden;
+        }
+        
+        /* Tema Warna Gaming */
+        .text-neon-red { color: #FF003C; }
+        .bg-neon-red { background-color: #FF003C; }
+        .border-neon-red { border-color: #FF003C; }
+        .bg-red-gradient { background: linear-gradient(135deg, #FF003C 0%, #7A001D 100%); }
+
+        /* Carbon Fiber Pattern Background */
+        .bg-gamer-pattern {
+            background-color: #050505;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+        }
+
+        /* Gamer Card Design */
+        .game-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: #FF003C;
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.2);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: grayscale(30%);
+        }
+
+        .game-card:hover .card-img-wrapper img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 100%;
+            background: linear-gradient(to top, #050505 5%, transparent 95%);
+        }
+
+        /* Responsive Tags */
+        .tag {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+        }
+
+        .badge-pc { background: #FF003C; color: white; }
+        .badge-cheat { background: #FACC15; color: black; }
+        .badge-tips { background: #38BDF8; color: white; }
+        .badge-retro { background: #4ADE80; color: black; }
+        .badge-mod { background: #A855F7; color: white; }
+        .badge-stream { background: #F43F5E; color: white; }
+
+        /* Modal Gamer Style */
+        .modal-content { width: 95%; max-width: 500px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF003C; }
+    </style>
+</head>
+<body class="bg-gamer-pattern">
+
+    <header class="pt-24 pb-12 md:pt-32 md:pb-20 px-6 text-center relative z-10">
+        <div class="absolute top-6 left-6 z-20">
+            <a href="#">
+                <img src="Theta Hub.png" alt="Theta Hub Logo" class="h-10 md:h-12 w-auto">
+            </a>
+        </div>
+
+        <div class="max-w-4xl mx-auto mt-10 md:mt-0">
+            <div class="inline-flex items-center gap-2 py-2 px-4 rounded-md bg-white/5 border border-white/10 text-neon-red font-bold text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-8">
+                <span class="w-2 h-2 rounded-full bg-neon-red animate-ping"></span> High Performance Gaming
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter italic">
+                GAMER <span class="text-transparent bg-clip-text bg-red-gradient">VAULT</span>
+            </h1>
+            <p class="text-sm md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
+                Pusat koleksi game PC terbaru, database kode cheat legendaris, emulator, dan tutorial optimasi hardware untuk pengalaman gaming maksimal.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-10 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-pc">AAA Titles</span>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="PC Gaming Setup">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">PC Game Library</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Kumpulan link download game PC repack dari berbagai genre: Action, RPG, hingga Simulator. Selalu diperbarui.</p>
+                    <button onclick="openModal()" class="w-full bg-red-gradient text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic shadow-[0_5px_15px_rgba(255,0,60,0.3)] hover:shadow-[0_10px_25px_rgba(255,0,60,0.5)] transition active:scale-95">
+                        Download Center ⬇️
+                    </button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-cheat">Legendary</span>
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop" alt="Retro Gaming">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Master Cheat Codes</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Koleksi kode cheat, trainer, dan rahasia tersembunyi untuk ribuan game, mulai dari era PS2 klasik hingga PC terkini.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Akses Cheat 🔑</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-tips">Optimization</span>
+                    <img src="https://images.unsplash.com/photo-1598550476439-6847785fce6b?q=80&w=800&auto=format&fit=crop" alt="Hardware Tweak">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Pro Tips & Tweaks</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Panduan optimasi Windows, overclocking GPU aman, hingga settingan NVIDIA/AMD terbaik untuk mendapatkan FPS tertinggi.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Buka Tips ⚡</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-retro">Retro Gaming</span>
+                    <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=800&auto=format&fit=crop" alt="Arcade Game">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Emulator & ROM Vault</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Paket lengkap emulator (PS2, PS3, Switch, PSP) beserta database ROM game nostalgia. Mainkan konsol favoritmu di PC.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Download Emulator 🕹️</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-cheat">Unlocked</span>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop" alt="Game Controller">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">100% Save Data Files</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">File save game tamat 100%. Semua karakter, senjata, dan misi rahasia sudah terbuka. Langsung nikmati *end-game* content.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Akses Save Data 💾</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-mod">PC Modding</span>
+                    <img src="https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=800&auto=format&fit=crop" alt="PC Modding">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Mods & Trainers</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Database mod grafik (Reshade, ENB), mod gameplay, dan software Trainer untuk memanipulasi *in-game memory* secara aman.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Telusuri Mods 🛠️</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-pc">Custom OS</span>
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=800&auto=format&fit=crop" alt="Windows Setup">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Gaming OS (Debloated)</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">File ISO Windows khusus gaming yang sudah di-debloat (Ghost Spectre, ReviOS). RAM lebih lega, latensi lebih rendah.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Download OS 💿</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-tips">Esports</span>
+                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=800&auto=format&fit=crop" alt="Esports Tournament">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Pro Player Configs</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Contek file *autoexec*, *crosshair*, dan sensitivitas mouse dari pro player game kompetitif (CS2, Valorant, Apex Legends).</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Lihat Configs 🎯</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-tips">Hardware</span>
+                    <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=800&auto=format&fit=crop" alt="PC Building">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">PC Build Blueprints</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Rekomendasi rakitan PC gaming terbaik sesuai budget (Low-end hingga Enthusiast). Hindari *bottleneck* komponen.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Lihat Build 🔧</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-stream">Broadcasting</span>
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800&auto=format&fit=crop" alt="Streaming Setup">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Streamer OBS Setup Kit</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Template *overlay* stream, settingan OBS Studio untuk PC kentang, dan panduan dasar memulai karir *game streamer*.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Akses Stream Kit 🎙️</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-mod">Server Host</span>
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" alt="Server Data">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Game Server Scripts</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">File *resource* dan script database untuk membuat server komunitasmu sendiri (GTA V FiveM, Minecraft, Rust, Palworld).</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Unduh Script 🌐</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-img-wrapper">
+                    <span class="tag badge-cheat">AutoHotkey</span>
+                    <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800&auto=format&fit=crop" alt="Mechanical Keyboard">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-bold text-2xl mb-3 text-white italic">Macro & Auto Scripts</h3>
+                    <p class="text-xs md:text-sm text-slate-400 mb-8 flex-grow leading-relaxed">Script AutoHotkey (AHK) dan *mouse macros* untuk mempermudah *looting*, *auto-clicker*, atau kombinasi skill game MMO.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full border-2 border-neon-red text-white py-4 rounded-md font-black text-sm tracking-widest uppercase italic text-center hover:bg-neon-red transition">Ambil Macro ⌨️</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="gameModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-[#111] rounded-lg w-full max-w-md border border-neon-red relative z-10 overflow-hidden modal-content">
+            <div class="p-6 text-center border-b border-white/5 bg-[#1a1a1a]">
+                <h3 class="text-xl font-black text-white italic tracking-tighter">SELECT PLATFORM</h3>
+                <p class="text-[10px] text-neon-red font-bold uppercase tracking-widest mt-1">Direct Download Access</p>
+            </div>
+            <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white/5 border border-white/5 rounded hover:border-neon-red hover:bg-white/10 transition group">
+                    <div class="text-2xl mr-4">🖥️</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-white uppercase italic">PC Games (Repack)</h5>
+                        <p class="text-[10px] text-slate-500 uppercase">High Compressed Files</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white/5 border border-white/5 rounded hover:border-neon-red hover:bg-white/10 transition group">
+                    <div class="text-2xl mr-4">🎮</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-white uppercase italic">Emulator ROMs</h5>
+                        <p class="text-[10px] text-slate-500 uppercase">PS2, PSP, Switch & Retro</p>
+                    </div>
+                </a>
+                <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-4 bg-white/5 border border-white/5 rounded hover:border-neon-red hover:bg-white/10 transition group">
+                    <div class="text-2xl mr-4">💾</div>
+                    <div class="text-left">
+                        <h5 class="text-sm font-bold text-white uppercase italic">Save Game 100%</h5>
+                        <p class="text-[10px] text-slate-500 uppercase">All Unlocked Files</p>
+                    </div>
+                </a>
+            </div>
+            <div class="p-6 text-center bg-[#0a0a0a]">
+                <button onclick="closeModal()" class="text-[10px] font-black text-slate-500 hover:text-white transition uppercase tracking-[0.3em]">Close Vault</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-16 text-center border-t border-white/5 mt-10">
+        <p class="text-[10px] text-slate-700 font-bold tracking-[0.5em] uppercase px-4">
+            &copy; 2026 THETA HUB. GAMING DIVISION.
+        </p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('gameModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeModal() {
+            document.getElementById('gameModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

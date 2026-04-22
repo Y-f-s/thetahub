@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Edukasi Bahasa - Yansyah Technology</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+     
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #F8FAFC; 
+            color: #0F172A; 
+        }
+        
+        .bg-primary { background-color: #6366F1; }
+        .text-primary { color: #6366F1; }
+        
+        .badge-pdf { background-color: #FEE2E2; color: #EF4444; }
+        .badge-audio { background-color: #E0E7FF; color: #4F46E5; }
+        .badge-video { background-color: #FEF3C7; color: #D97706; }
+        .badge-pack { background-color: #F3E8FF; color: #9333EA; }
+
+        .edu-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .edu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #6366F1;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background-color: #E2E8F0;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .edu-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .format-tags {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Custom Scrollbar untuk Modal */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white border-b border-slate-200 pt-16 pb-12 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 font-semibold text-sm mb-4">
+                Pendidikan Product - Bahasa
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Language Learning <span class="text-primary">Hub</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-8">
+                Pusat materi pembelajaran bahasa asing, Grammar, serta persiapan TOEFL, TOEIC, dan IELTS terlengkap.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pack shadow-sm">All Format</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop" alt="Bahasa Asing">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Belajar Bahasa Asing</h3>
+                    <p class="text-sm text-slate-500 mb-4 flex-grow">Pilih materi bahasa sesuai minat Anda. Tersedia modul lengkap dari tingkat pemula hingga mahir.</p>
+                    <button onclick="openModal()" class="w-full text-center bg-slate-900 text-white py-3 rounded-lg hover:bg-primary transition font-semibold mt-auto cursor-pointer flex items-center justify-center gap-2">
+                        Pilih Bahasa & Materi <span>&rarr;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                        <span class="tag badge-audio shadow-sm">Audio</span>
+                        <span class="tag badge-video shadow-sm">Video</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Cambridge Audio Video">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Cambridge IELTS Book Audio & Video</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Paket komprehensif official Cambridge. Dilengkapi dengan buku panduan, rekaman audio listening, dan video speaking.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?q=80&w=800&auto=format&fit=crop" alt="IELTS Books">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">IELTS Cambridge, Longman, Oxford Book</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Koleksi e-book persiapan IELTS dari publisher terkemuka dunia. Kuasai semua modul: Reading, Writing, Listening & Speaking.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                        <span class="tag badge-audio shadow-sm">Audio</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=800&auto=format&fit=crop" alt="TOEFL Preparation">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">TOEFL iBT & ITP Preparation</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Modul intensif persiapan TOEFL. Mengupas tuntas pola Structure (Grammar), Written Expression, Reading, dan simulasi Listening.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                        <span class="tag badge-audio shadow-sm">Audio</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop" alt="TOEIC Mastery">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">TOEIC Grammar & Listening</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Tingkatkan skor TOEIC untuk kebutuhan karir profesional. Berisi panduan tata bahasa bisnis, kosa kata tempat kerja, dan latihan audio.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Grammar Book 1">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Grammar & Vocab Book 1</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Buku fundamental untuk memperkuat pondasi tata bahasa dan memperkaya kosa kata dasar hingga menengah.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=800&auto=format&fit=crop" alt="Grammar Book 2">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Grammar & Vocab Book 2</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Lanjutan seri Grammar & Vocab. Fokus pada struktur kalimat kompleks dan kosa kata tingkat lanjut.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pack shadow-sm">Bundle Pack</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=800&auto=format&fit=crop" alt="Barrons IELTS">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Barron's IELTS Pack</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Paket Superpack Barron's IELTS. Berisi strategi esensial, tips praktis, dan latihan komprehensif.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-video shadow-sm">Video</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Speaking Video">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">IELTS Speaking Video</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Simulasi tes Speaking langsung dengan penguji. Pelajari gestur, kelancaran, dan cara menjawab pertanyaan.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                        <span class="tag badge-audio shadow-sm">Audio</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=800&auto=format&fit=crop" alt="Speaking Tips">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">IELTS Speaking Tips</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Kumpulan rahasia dan trik dari mantan penguji IELTS untuk mendongkrak skor Speaking Anda.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Soal Jawaban">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Bank Soal & Jawaban</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Kumpulan latihan soal (Practice Tests) lengkap dengan kunci jawaban dan pembahasan untuk evaluasi mandiri.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="card-img-wrapper">
+                    <div class="format-tags">
+                        <span class="tag badge-video shadow-sm">Video</span>
+                        <span class="tag badge-pdf shadow-sm">PDF</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" alt="English for Kids and Students">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">English for Kids & Students</h3>
+                    <p class="text-sm text-slate-500 mb-6 flex-grow">Materi belajar bahasa Inggris dasar yang menyenangkan. Dilengkapi lembar kerja interaktif, lagu, dan video animasi edukatif.</p>
+                    <a href="https://lynk.id/yansyahtech" target="_blank" class="w-full text-center bg-slate-100 text-primary border border-indigo-100 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold mt-auto">Akses Materi</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-12 bg-indigo-50 border-y border-indigo-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">Rekomendasi & Mitra Edukasi</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Persiapan Ujian & Beasiswa Luar Negeri</h2>
+                <p class="text-slate-600 mt-2 max-w-2xl mx-auto">Tingkatkan peluang lolos beasiswa impian Anda dengan platform ujian dan bimbingan terpercaya berikut ini.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://toeflibt.ets.org/welcome" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-blue-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">ETS</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">TOEFL iBT® Official</h4>
+                        <p class="text-xs text-slate-500 mt-1">Sertifikasi bahasa Inggris standar global resmi dari ETS untuk keperluan akademik & beasiswa.</p>
+                    </div>
+                </a>
+
+                <a href="https://test.lkpb.co.id/" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">ID</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-emerald-600 transition">Tes TOEFL ITP LKPB</h4>
+                        <p class="text-xs text-slate-500 mt-1">Penyedia layanan tes prediksi TOEFL berkualitas untuk keperluan beasiswa dalam negeri & CPNS.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.schoters.com/p/ielts-preparation" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-orange-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">SC</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-orange-600 transition">Schoters IELTS Prep</h4>
+                        <p class="text-xs text-slate-500 mt-1">Bimbingan intensif persiapan IELTS bersama tutor expert untuk target skor tinggi universitas top.</p>
+                    </div>
+                </a>
+
+                <a href="https://lpdp.kemenkeu.go.id/" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-red-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-red-100 text-red-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">RI</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-red-600 transition">Beasiswa LPDP</h4>
+                        <p class="text-xs text-slate-500 mt-1">Portal resmi Kementerian Keuangan RI untuk pendaftaran beasiswa studi lanjut S2 & S3.</p>
+                    </div>
+                </a>
+
+                <a href="https://takeielts.britishcouncil.org/" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-indigo-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-indigo-100 text-indigo-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">BC</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-indigo-600 transition">British Council IELTS</h4>
+                        <p class="text-xs text-slate-500 mt-1">Pesan jadwal tes IELTS resmi Anda melalui lembaga bahasa Inggris paling diakui di dunia.</p>
+                    </div>
+                </a>
+
+                <a href="https://englishtest.duolingo.com/" target="_blank" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-green-500 hover:shadow-md transition flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-lg bg-green-100 text-green-600 flex flex-shrink-0 items-center justify-center text-xl font-bold">DET</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 group-hover:text-green-600 transition">Duolingo English Test</h4>
+                        <p class="text-xs text-slate-500 mt-1">Sertifikasi bahasa Inggris online yang efisien dan diakui oleh lebih dari 4000+ universitas global.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="languageModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-0">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl relative z-10 flex flex-col max-h-[90vh] transform transition-all">
+            <div class="bg-white px-6 py-5 border-b border-slate-100 flex justify-between items-center rounded-t-2xl">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-800">Pilih Bahasa & Materi</h3>
+                    <p class="text-xs text-slate-500 mt-1">Pilih kategori yang ingin Anda pelajari hari ini.</p>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition">
+                    &times;
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto custom-scrollbar bg-slate-50">
+                <div class="mb-8">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-4 h-px bg-slate-300"></span> Bahasa Populer <span class="w-full h-px bg-slate-300"></span>
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇬🇧</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">English</span>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇨🇳</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">Mandarin</span>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇯🇵</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">Jepang</span>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇰🇷</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">Korea</span>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇸🇦</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">Arab</span>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group text-center">
+                            <span class="text-3xl mb-2">🇫🇷</span>
+                            <span class="font-semibold text-sm text-slate-700 group-hover:text-primary">Prancis</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-4 h-px bg-slate-300"></span> Fokus & Spesialisasi <span class="w-full h-px bg-slate-300"></span>
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-3 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group">
+                            <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg mr-3">🏢</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-slate-800 group-hover:text-primary">Business English</h5>
+                                <p class="text-[11px] text-slate-500">Karir & Profesional</p>
+                            </div>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-3 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group">
+                            <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center text-lg mr-3">🎓</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-slate-800 group-hover:text-primary">TOEFL / IELTS Prep</h5>
+                                <p class="text-[11px] text-slate-500">Persiapan Ujian</p>
+                            </div>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-3 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg mr-3">🗣️</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-slate-800 group-hover:text-primary">Daily Conversation</h5>
+                                <p class="text-[11px] text-slate-500">Percakapan Santai</p>
+                            </div>
+                        </a>
+                        <a href="https://lynk.id/yansyahtech" target="_blank" class="flex items-center p-3 bg-white border border-slate-200 rounded-xl hover:border-primary hover:shadow-md transition group">
+                            <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-lg mr-3">👶</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-slate-800 group-hover:text-primary">Kids Language</h5>
+                                <p class="text-[11px] text-slate-500">Materi Anak-anak</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white px-6 py-4 border-t border-slate-100 rounded-b-2xl text-center">
+                <p class="text-xs text-slate-400">Pilih salah satu menu di atas untuk diarahkan ke halaman produk.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-10 text-center">
+        <p class="text-sm text-slate-500 font-medium">&copy; 2026 YANSYAH TECHNOLOGY. The Digital Hub.</p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('languageModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('languageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>
